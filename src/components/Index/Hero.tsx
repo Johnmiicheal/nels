@@ -14,9 +14,10 @@ export const Hero = () => {
       bgImg="/assets/nelsbg.png"
       bgSize="cover"
       w="full"
-      h="100vh"
+      h={{ lg: "70vh"}}
       align="center"
       pt={40}
+      pb={20}
     >
       <Flex
         align="center"

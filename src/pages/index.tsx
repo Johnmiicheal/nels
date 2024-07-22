@@ -1,13 +1,19 @@
 import { About } from "@/components/Index/About";
+import { Articles } from "@/components/Index/Articles";
 import { Hero } from "@/components/Index/Hero";
+import { Projects } from "@/components/Index/Projects";
 import { Layout } from "@/components/Layout";
-import { Flex } from "@chakra-ui/react";
+import { PageProvider } from "@/components/PageProvider";
 
 export default function Home() {
   return (
-    <Layout>
-      <Hero />
-      <About />
-    </Layout>
+    <PageProvider>
+        <Hero />
+      <Layout>
+        <About />
+        <Projects />
+        <Articles />
+      </Layout>
+    </PageProvider>
   );
 }

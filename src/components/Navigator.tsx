@@ -34,6 +34,7 @@ export const Navigator = () => {
       pos="fixed"
       bottom={10}
       w="full"
+      zIndex={99}
     >
       <Flex
         bg="#E2E2E280"
@@ -49,6 +50,7 @@ export const Navigator = () => {
           icon={<TbFileTypePdf />}
           variant="ghost"
           color="#999999"
+          _hover={{bg: "white"}}
         />
         {navItems.map((item, index) => (
           <Button
@@ -58,6 +60,7 @@ export const Navigator = () => {
             color="#999999"
             fontWeight={"500"}
             w='fit-content'
+          _hover={{bg: "white"}}
           >
             {item.label}
           </Button>
