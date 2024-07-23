@@ -65,11 +65,21 @@ const Post = () => {
               );
               setAllContent(allContent)
         }
+        if (content.length < 1) {
+            const intervalId = setInterval(() => {
+              fetchContent();
+            }, 500); // Fetch every 500 milliseconds
         
-            
-        if(content.length < 1){
-            fetchContent();
-        } 
+            const timeoutId = setTimeout(() => {
+              clearInterval(intervalId);
+            }, 4000); // Stop after 4 seconds
+        
+            // Clear timeout and interval on cleanup
+            return () => {
+              clearInterval(intervalId);
+              clearTimeout(timeoutId);
+            };
+          }
     }, [allContent, content, slug])
     const sortContent = allContent.filter((item) => item.slug.current !== content[0]?.slug.current).sort(() => 0.5 - Math.random())
     const sliceContent = getRandomElements(sortContent, 5)

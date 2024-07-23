@@ -50,8 +50,20 @@ const ProjectItem = () => {
           console.log(nextProject)
       };
       console.log(next)
-      if(projects.length < 1){
+      if (projects.length < 1) {
+        const intervalId = setInterval(() => {
           fetchProjects();
+        }, 500); // Fetch every 500 milliseconds
+    
+        const timeoutId = setTimeout(() => {
+          clearInterval(intervalId);
+        }, 4000); // Stop after 4 seconds
+    
+        // Clear timeout and interval on cleanup
+        return () => {
+          clearInterval(intervalId);
+          clearTimeout(timeoutId);
+        };
       }
     }, [projects, slug]);
     return(
