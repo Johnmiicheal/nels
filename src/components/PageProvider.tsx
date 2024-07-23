@@ -27,7 +27,7 @@ export const PageProvider: React.FC<PageProviderProps> = ({
         <title>Nelson Elijah - {title}</title>
         <meta name="description" content="Nelson Elijah's Portfolio Site" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/assets/logosingle.svg" />
       </Head>
       <Header />
       {children}
