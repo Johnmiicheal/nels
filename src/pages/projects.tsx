@@ -42,7 +42,6 @@ export default function Projects() {
       <Text
         className={gentium.className}
         w={{ base: "full", md: "400px" }}
-        px={{ base: "5", lg: 0 }}
       >
         “Nelson is an Electrical Engineer with a drive to merge Hardware Systems and Artificial Intelligence, exploring domains like Embedded Systems, Robotics, HCI, EdgeAI, and beyond.”
       </Text>

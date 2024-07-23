@@ -38,7 +38,6 @@ export const Hero = () => {
           <Text
             className={gentium.className}
             w={{ base: "full", md: "500px" }}
-            px={{ base: "5", lg: 0}}
             fontSize="1.2rem"
           >
             As an aspiring hardware, robotics, and backend engineer passionate

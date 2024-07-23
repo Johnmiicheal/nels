@@ -1,5 +1,4 @@
 import { Flex, Text, Image, Button, IconButton } from "@chakra-ui/react";
-import Marquee from "./utils/Marquee";
 import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io5"
 
 
