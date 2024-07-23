@@ -1,6 +1,6 @@
-import { Flex } from "@chakra-ui/react";
+import { Flex, useMediaQuery } from "@chakra-ui/react";
 import React, { ReactNode } from "react";
-import { Navigator } from "./Navigator";
+import { MobileNavigator, Navigator } from "./Navigator";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import Head from "next/head";
@@ -14,6 +14,8 @@ export const PageProvider: React.FC<PageProviderProps> = ({
   children,
   title,
 }) => {
+const [mobile] = useMediaQuery("(max-width: 500px)");
+
   return (
     <Flex
       direction="column"
@@ -31,7 +33,8 @@ export const PageProvider: React.FC<PageProviderProps> = ({
       </Head>
       <Header />
       {children}
-      <Navigator />
+      {mobile && <MobileNavigator />}
+       <Navigator />
       <Footer />
     </Flex>
   );

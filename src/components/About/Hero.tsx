@@ -21,7 +21,6 @@ export const Hero = () => {
         <Text
             className={gentium.className}
             w={{ base: "full", md: "400px" }}
-            px={{ base: "5", lg: 0 }}
         >
             “I am pursuing a career in hardware, systems, and backend
             engineering because I believe anyone can change the world with better
