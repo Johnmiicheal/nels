@@ -7,7 +7,7 @@ import { PageProvider } from "@/components/PageProvider";
 
 export default function Home() {
   return (
-    <PageProvider>
+    <PageProvider title="Robotics. Teaching. Quality Education.">
         <Hero />
       <Layout>
         <About />

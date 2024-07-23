@@ -8,12 +8,12 @@ import { PageProvider } from "@/components/PageProvider";
 import client from "@/utils/sanity";
 import { useEffect, useState } from "react";
 
-export default function About() {
+export default function Projects() {
     const [content, setContent] = useState<any>([]);
     useEffect(() => {
         const fetchContent = async () => {
-            const about = await client.fetch(
-                `*[_type == "about"]{introduction, otherInterests, "mainImage" : mainImage{alt,caption, asset{_ref}->{url,"blurHash":metadata.blurHash,"dimensions":metadata.dimensions{width,height}}},body[]{
+            const articles = await client.fetch(
+                `*[_type == "post" && hidden != true]{_id,publishedAt,title,slug, body[]{
                 ...,
                 _type == 'block' => {
                 ...,
@@ -26,16 +26,16 @@ export default function About() {
               },
              _type == 'image' => {
                 type,alt,_key,_type, asset{_ref}-> {url,"blurHash":metadata.blurHash, "dimensions":metadata.dimensions{width,height}}
-              },}}`
+              },} } | order(publishedAt desc)[0...5]`
               );
-              setContent(about)
-              console.log("Content: ", about)
+              setContent(articles)
+              console.log("Content: ", articles)
         }
         fetchContent()
     }, [])
     console.log(content)
   return (
-    <PageProvider title="About">
+    <PageProvider title="My Projects">
         <Hero />
       <Layout>
        <Exposition exposition={content![0]?.body!} />

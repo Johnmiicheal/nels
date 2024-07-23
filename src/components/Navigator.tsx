@@ -13,8 +13,8 @@ export const Navigator = () => {
       path: "/about",
     },
     {
-      label: "Articles",
-      path: "/articles",
+      label: "Blog",
+      path: "/blog",
     },
     {
       label: "Projects",
