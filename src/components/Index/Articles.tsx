@@ -63,7 +63,7 @@ import Marquee from "../utils/Marquee";
               slug={slug.current} />
             ))}
            
-            <Button variant="link" colorScheme="blue">
+            <Button variant="link" colorScheme="blue" onClick={() => window.location.assign('/blog')}>
               Read more articles
             </Button>
           </VStack>

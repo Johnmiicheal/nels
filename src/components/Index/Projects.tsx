@@ -57,7 +57,7 @@ export const Projects = () => {
                 )}
       </SimpleGrid>
        
-      <Button mt={3} variant="link" colorScheme="blue">See more projects</Button>
+      <Button mt={3} variant="link" colorScheme="blue" onClick={() => window.location.assign('/projects')}>See more projects</Button>
     </Flex>
   );
 };

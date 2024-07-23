@@ -21,20 +21,19 @@ const SinglePost = ({ publishedAt, body, title, slug, summary }: any) => {
       w="full"
       h="40vh"
       align="start"
-      pt={40}
+      pt={{ base: 28, lg: 40}}
       pb={20}
       mb={5}
       bg="#479AFB"
       color="white"
       px={{ base: "20px", lg: "100px", xl: "280px" }}
     >
-      <Text fontSize={"5xl"} fontWeight={"bold"} color="white">
+      <Text fontSize={{ base: '3xl', md: "5xl"}} fontWeight={"bold"} color="white">
         {title}
       </Text>
       <Text
         className={gentium.className}
         w={{ base: "full", md: "400px" }}
-        px={{ base: "5", lg: 0 }}
       >
         “{summary}”
       </Text>

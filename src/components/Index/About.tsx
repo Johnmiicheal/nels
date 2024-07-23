@@ -67,7 +67,7 @@ export const About = () => {
             yourself. This realisation allowed me to become the Best Graduating
             Student from Covenant University in 2023.
           </Text>
-          <Button variant="link" color="black">
+          <Button variant="link" color="black" onClick={() => window.location.assign('/blog')}>
             Find out more from my Blogs
           </Button>
           <Button variant="link" color="black">
@@ -111,7 +111,7 @@ export const About = () => {
             ))}
           </Flex>
           </Flex>
-          <Button colorScheme="blue">Learn More</Button>
+          <Button colorScheme="blue" onClick={() => window.location.assign('/about')}>Learn More</Button>
         </VStack>
       </Flex>
     </Flex>

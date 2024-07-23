@@ -159,13 +159,11 @@ export const customProjectComponents = {
             width="100%"
             position="relative"
             sx={{
-              aspectRatio: `${value?.asset.dimensions.width}/${value?.asset.dimensions.height}`,
+              aspectRatio: `${value?.asset.dimensions?.width}/${value?.asset.dimensions?.height}`,
             }}>
             <Image
               src={value?.asset.url}
               alt={value?.alt || "decorative"}
-              placeholder="blur"
-              blurDataURL={value?.asset.blurHash}
               fill
               style={{ objectFit: "cover" }}
             />

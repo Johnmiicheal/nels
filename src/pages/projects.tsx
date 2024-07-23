@@ -1,47 +1,83 @@
 
-import { Education } from "@/components/About/Education";
-import { Exposition } from "@/components/About/Exposition";
 import { Hero } from "@/components/About/Hero";
 import { Work } from "@/components/About/Work";
+import { gentium } from "@/components/Index/Hero";
 import { Layout } from "@/components/Layout";
 import { PageProvider } from "@/components/PageProvider";
+import getDateString from "@/utils/getDateString";
 import client from "@/utils/sanity";
+import { Flex, Box, Text, SimpleGrid, Card, CardHeader, CardBody, CardFooter, Image, Heading, Button, ButtonGroup, Divider, Stack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 export default function Projects() {
-    const [content, setContent] = useState<any>([]);
-    useEffect(() => {
-        const fetchContent = async () => {
-            const articles = await client.fetch(
-                `*[_type == "post" && hidden != true]{_id,publishedAt,title,slug, body[]{
-                ...,
-                _type == 'block' => {
-                ...,
-                markDefs[]{
-                  ...,
-                  _type == "internalLink" => {
-                    "info": @.reference->{_type,slug}
-                  }
-                }
-              },
-             _type == 'image' => {
-                type,alt,_key,_type, asset{_ref}-> {url,"blurHash":metadata.blurHash, "dimensions":metadata.dimensions{width,height}}
-              },} } | order(publishedAt desc)[0...5]`
-              );
-              setContent(articles)
-              console.log("Content: ", articles)
-        }
-        fetchContent()
-    }, [])
-    console.log(content)
+  const [projects, setProjects] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const project = await client.fetch(`
+        *[_type == "project"]{_key,title,publishedAt,slug,summary,skills,authorAffiliation, "mainImage" : mainImage{alt,caption, asset{_ref}->{url,"blurHash":metadata.blurHash}}} | order(publishedAt desc)
+      `);
+      setProjects(project);
+    };
+    fetchProjects();
+  }, []);
+    console.log(projects)
   return (
     <PageProvider title="My Projects">
-        <Hero />
-      <Layout>
-       <Exposition exposition={content![0]?.body!} />
-      </Layout>
-      <Work />
-     <Education />
+         <Flex
+      direction="column"
+      w="full"
+      h="40vh"
+      align="start"
+      pt={40}
+      pb={20}
+      mb={10}
+      bg="#479AFB"
+      color="white"
+      px={{ base: "20px", lg: "100px", xl: "280px" }}
+    >
+      <Text fontSize={"5xl"} fontWeight={"bold"} color="white">
+        MY PROJECTS
+      </Text>
+      <Text
+        className={gentium.className}
+        w={{ base: "full", md: "400px" }}
+        px={{ base: "5", lg: 0 }}
+      >
+        “Nelson is an Electrical Engineer with a drive to merge Hardware Systems and Artificial Intelligence, exploring domains like Embedded Systems, Robotics, HCI, EdgeAI, and beyond.”
+      </Text>
+    </Flex>
+    <Layout>
+    <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(400px, 1fr))' w="full" mb={10}>
+      {projects.map((item) => (
+        <Card maxW='sm' key={item._id} cursor="pointer" transition="transform 0.3s ease" _hover={{ transform: "scale(1.02)", "& img": { transform: "scale(1.1)" } }}  w={{ md: "400px" }} onClick={() => window.location.assign(`/projects/${item.slug.current}`)}>
+        <CardBody>
+        <Box overflow="hidden" rounded="md">
+          <Image
+            src={item.mainImage.asset.url!}
+            alt={item.mainImage.alt}
+            borderRadius='lg'
+            boxSize="200px"
+            objectFit={"cover"}
+            w="full"
+            transition="transform 0.8s ease" 
+          />
+          </Box>
+          <Stack mt='6' spacing='3'>
+            <Heading size='md'>{item.title}</Heading>
+            <Text>
+             {item.summary}
+            </Text>
+          </Stack>
+        </CardBody>
+        <CardFooter>
+          <Text fontSize={14}>{getDateString(item.publishedAt)}</Text>
+        </CardFooter>
+      </Card>
+      ))}
+
+    </SimpleGrid>
+    </Layout>
     </PageProvider>
   );
 }

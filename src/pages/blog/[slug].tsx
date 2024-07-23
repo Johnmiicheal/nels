@@ -75,7 +75,7 @@ const Post = () => {
     const sliceContent = getRandomElements(sortContent, 5)
 
     return(
-        <PageProvider title="Post">
+        <PageProvider title={content[0]?.title}>
                 <SinglePost title={content![0]?.title!}
                 publishedAt={getDateString(content![0]?.publishedAt!)}
                 slug={slug}
