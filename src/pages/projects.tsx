@@ -48,9 +48,9 @@ export default function Projects() {
       </Text>
     </Flex>
     <Layout>
-    <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(400px, 1fr))' w="full" mb={10}>
+    <SimpleGrid spacing={3} columns={{ base: 1, md: 2 , lg: 3}} w="full" mb={10}>
       {projects.map((item) => (
-        <Card maxW='sm' key={item._id} cursor="pointer" transition="transform 0.3s ease" _hover={{ transform: "scale(1.02)", "& img": { transform: "scale(1.1)" } }}  w={{ md: "400px" }} onClick={() => window.location.assign(`/projects/${item.slug.current}`)}>
+        <Card maxW='sm' key={item._id} cursor="pointer" transition="transform 0.3s ease" _hover={{ transform: "scale(1.02)", "& img": { transform: "scale(1.1)" } }}  onClick={() => window.location.assign(`/projects/${item.slug.current}`)}>
         <CardBody>
         <Box overflow="hidden" rounded="md">
           <Image

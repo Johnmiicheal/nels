@@ -1,4 +1,4 @@
-import { Flex, Text, Image, Heading } from "@chakra-ui/react";
+import { Flex, Text, Image, Heading, Stack, Center } from "@chakra-ui/react";
 import { Gentium_Book_Plus } from "next/font/google";
 
 export const gentium = Gentium_Book_Plus({
@@ -9,6 +9,7 @@ export const gentium = Gentium_Book_Plus({
 
 export const Hero = () => {
   return (
+    <Center w="full">
     <Flex
       direction="column"
       bgImg="/assets/nelsbg.png"
@@ -18,6 +19,7 @@ export const Hero = () => {
       align="center"
       pt={40}
       pb={20}
+      px={{ base: "20px", lg: "100px", xl: "280px" }}
     >
       <Flex
         align="center"
@@ -25,7 +27,7 @@ export const Hero = () => {
         direction={{ base: "column", lg: "row" }}
         color="#747474"
       >
-        <Image src="/images/nels.png" alt="nelson" w="300px" rounded="md" />
+        <Image src="/images/nels.png" alt="nelson" w={{ md: "350px"}} rounded="md" />
         <Flex
           direction="column"
           h="full"
@@ -37,6 +39,7 @@ export const Hero = () => {
             className={gentium.className}
             w={{ base: "full", md: "500px" }}
             px={{ base: "5", lg: 0}}
+            fontSize="1.2rem"
           >
             As an aspiring hardware, robotics, and backend engineer passionate
             about merging Hardware Systems and AI, exploring Robotics, HCI, and
@@ -52,18 +55,20 @@ export const Hero = () => {
             </Text>{" "}
             to a better society.
           </Text>
-          <Heading
-            fontWeight={"black"}
-            fontSize="5xl"
-            color="#479AFB"
-            textTransform={"uppercase"}
-            mb={{ lg: -10 }}
-          >
-            Nelson Elijah
-          </Heading>
-          <Text fontSize="24">Robotics. Teaching. Quality education.</Text>
+          <Stack spacing={-5} mt={5}>
+            <Heading
+              fontWeight={"black"}
+              fontSize="5xl"
+              color="#479AFB"
+              textTransform={"uppercase"}
+            >
+              Nelson Elijah
+            </Heading>
+            <Text fontSize="24">Robotics. Teaching. Quality education.</Text>
+          </Stack>
         </Flex>
       </Flex>
     </Flex>
+    </Center>
   );
 };

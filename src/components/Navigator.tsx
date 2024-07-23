@@ -1,6 +1,6 @@
 import { Flex, Button, IconButton } from "@chakra-ui/react";
 import { TbFileTypePdf } from "react-icons/tb";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 
 export const Navigator = () => {
   const navItems = [
@@ -35,6 +35,7 @@ export const Navigator = () => {
       bottom={10}
       w="full"
       zIndex={99}
+      
     >
       <Flex
         bg="#E2E2E280"
@@ -54,13 +55,15 @@ export const Navigator = () => {
         />
         {navItems.map((item, index) => (
           <Button
-            variant="ghost"
+            // variant="ghost"
             key={index}
             onClick={() => router.push(item.path)}
-            color="#999999"
+            color={router.pathname === item.path ? "#479AFB" : "#999"}
+            bg={router.pathname === item.path ? "#FFF" : "transparent"}
+
             fontWeight={"500"}
             w='fit-content'
-          _hover={{bg: "white"}}
+            _hover={{bg: "white"}}
           >
             {item.label}
           </Button>

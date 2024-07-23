@@ -13,7 +13,7 @@ const ProjectHeader = ({
   return (
     <Flex direction="column" w="full" mt={40}>
         <Flex gap={10} align="start" direction={{ base: "column", lg: "row"}}>
-            <Image src={mainImage?.asset.url} alt={title} objectFit={"cover"} h="200px" w={{ w: "full", lg: "200px"}} rounded="10px" />
+            <Image src={mainImage?.asset.url} alt={title} objectFit={"cover"} h="200px" w={{ base: "full", lg: "200px"}} rounded="10px" />
             <Stack>
                 <Text fontSize="5xl" fontWeight={'700'}>{title}</Text>
                 <Text color="#747474">{summary}</Text>

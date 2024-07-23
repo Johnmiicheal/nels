@@ -20,6 +20,7 @@ export const Work = () => {
       mt={40}
       pb={20}
       px={{ base: "20px", lg: "100px", xl: "280px" }}
+      fontSize="1.4rem"
     >
       <Flex align="center" gap={2}>
         <Icon as={IoBriefcaseOutline} fontSize={20} color="#479AFB" />
@@ -45,7 +46,7 @@ export const Work = () => {
             <Text fontSize={12}>
               {item.xpLocation} ∙ {item.xpTimeline}{" "}
             </Text>
-            <Text mt={2} color="#4f4f4f" fontSize="13" fontWeight={"300"}>
+            <Text mt={2} color="#4f4f4f" fontSize="1rem" fontWeight={"300"}>
               {item.xpDescription}
             </Text>
           </Stack>
