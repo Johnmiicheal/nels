@@ -40,7 +40,7 @@ import Marquee from "../utils/Marquee";
         w="full"
         h="full"
         align="center"
-        mt={20}
+        mt={10}
         pb={20}
       >
         <Flex

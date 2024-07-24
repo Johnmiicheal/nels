@@ -23,7 +23,7 @@ export const About = () => {
       w="full"
       h="full"
       align="center"
-      mt={20}
+      mt={10}
       pb={20}
     >
       <Flex

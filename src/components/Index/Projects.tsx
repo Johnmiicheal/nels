@@ -24,7 +24,7 @@ export const Projects = () => {
       w="full"
       h="full"
       align={{ base: "center", lg: "start"}}
-      mt={{ base: 40, lg: 32}}
+      mt={10}
       pb={20}
     >
       <Flex align={"center"} gap={2} fontSize="24" mb={5}>
