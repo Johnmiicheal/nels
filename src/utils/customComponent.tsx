@@ -71,8 +71,10 @@ const defaultComponents = {
         my={4}>
         <Text
           as="blockquote"
+          p={1}
           sx={{
             fontSize: "1.2rem",
+            fontStyle: 'italic',
             lineHeight: "2rem",
             backgroundColor: "#E8F0F8",
             display: "inline",
@@ -197,7 +199,6 @@ export const customProjectComponents = {
           pl={2}
           my={4}>
           <Text
-            variant="body1"
             sx={{
               fontSize: "1.2rem",
               lineHeight: "2rem",

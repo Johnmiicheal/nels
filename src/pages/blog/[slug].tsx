@@ -82,7 +82,7 @@ const Post = () => {
           }
     }, [allContent, content, slug])
     const sortContent = allContent.filter((item) => item.slug.current !== content[0]?.slug.current).sort(() => 0.5 - Math.random())
-    const sliceContent = getRandomElements(sortContent, 5)
+    const sliceContent = getRandomElements(sortContent, 6)
 
     return(
         <PageProvider title={content[0]?.title}>
@@ -93,9 +93,9 @@ const Post = () => {
                 <Layout>
                     <Stack w="full" mb={10}>
                         <Text textAlign="start" >Recommended for you</Text>
-                        <SimpleGrid spacing={4} templateColumns='repeat(auto-fill, minmax(400px, 1fr))'>
+                        <SimpleGrid spacing={4} columns={{ base: 1, md: 2, lg: 3}}>
                             {sliceContent.map((item) => (
-                                <Card key={item._id} w={{ base: "full", lg: "400px"}} onClick={() => window.location.assign(`/blog/${item.slug.current}`)} cursor="pointer" transition="transform 0.3s ease" _hover={{ transform: "scale(1.02)" }} >
+                                <Card key={item._id} onClick={() => window.location.assign(`/blog/${item.slug.current}`)} cursor="pointer" transition="transform 0.3s ease" _hover={{ transform: "scale(1.02)" }} >
                                 <CardHeader>
                                   <Text fontWeight={'semibold'} size='sm'>{item.title}</Text>
                                 </CardHeader>
