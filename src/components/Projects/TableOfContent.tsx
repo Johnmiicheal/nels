@@ -39,7 +39,7 @@ const TableOfContents = ({ headings, sx }: any) => {
           <UnorderedList spacing={2}>
         {outline.map((heading: any) => (
             <ListItem key={heading._key}
-              fontSize={22}
+              fontSize={16}
               >
               <Link  href={"#" + heading._key}>
               {getChildrenText(heading!)}
@@ -61,7 +61,7 @@ const TableOfContents = ({ headings, sx }: any) => {
       borderRightColor={"gray.300"}
       >
       <Box w="full">
-        <Text as="h1" my={[2, 3]} fontSize={{ sm: "2rem" }}>
+        <Text as="h1" my={[2, 3]} fontSize={{ sm: "1.2rem" }} fontWeight={600}>
           Contents
         </Text>
         {createTable(outline)}

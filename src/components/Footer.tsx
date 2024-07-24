@@ -12,7 +12,7 @@ export const Footer = () => {
         </Flex>
         <Flex align="center" gap={3}>
                 <Button onClick={() => window.open('mailto:nelsonelijah@gmail.com')} textTransform={"uppercase"} border="1px solid #fff" color="#fff" bg="transparent" fontWeight={500} fontSize={14}>Contact Me</Button>
-                <IconButton onClick={() => window.open('https://github.com/NelsonElijah')} aria-label="github" icon={<IoLogoGithub />} variant="ghost" color="#fff" />
+                <IconButton onClick={() => window.open('https://github.com/nelsonifechukwu')} aria-label="github" icon={<IoLogoGithub />} variant="ghost" color="#fff" />
                 <IconButton onClick={() => window.open("https://www.linkedin.com/in/nelson-elijah/")} aria-label="linkedin" icon={<IoLogoLinkedin />} variant="ghost" color="#fff" />
             </Flex>
       </Flex>
