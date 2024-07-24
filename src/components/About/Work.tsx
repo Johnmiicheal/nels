@@ -43,10 +43,10 @@ export const Work = () => {
             <Text fontWeight={500}>
               {item.xpPos}, {item.xpName}
             </Text>
-            <Text fontSize={12}>
+            <Text fontSize={15} color="#747474">
               {item.xpLocation} ∙ {item.xpTimeline}{" "}
             </Text>
-            <Text mt={2} color="#4f4f4f" fontSize="1rem" fontWeight={"300"}>
+            <Text mt={2} color="#000" fontSize="1rem" fontWeight={"300"}>
               {item.xpDescription}
             </Text>
           </Stack>

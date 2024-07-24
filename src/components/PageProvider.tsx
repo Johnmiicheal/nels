@@ -1,4 +1,4 @@
-import { Flex, useMediaQuery } from "@chakra-ui/react";
+import { Center, Flex, useMediaQuery } from "@chakra-ui/react";
 import React, { ReactNode } from "react";
 import { MobileNavigator, Navigator } from "./Navigator";
 import { Header } from "./Header";
@@ -18,24 +18,26 @@ const [mobile] = useMediaQuery("(max-width: 500px)");
 
   return (
     <Flex
-      direction="column"
-      justify="space-between"
-      align="center"
-      bg="#F9F9F9"
-      minH="100vh"
-      w="full"
+    direction="column"
+    justify="space-between"
+    align="center"
+    bg="#F9F9F9"
+    minH="100vh"
+    w="full"
     >
-      <Head>
-        <title>Nelson Elijah - {title}</title>
-        <meta name="description" content="Nelson Elijah's Portfolio Site" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/assets/logosingle.svg" />
-      </Head>
-      <Header />
-      {children}
-      {mobile && <MobileNavigator />}
-       <Navigator />
-      <Footer />
-    </Flex>
+        <Head>
+          <title>Nelson Elijah - {title}</title>
+          <meta name="description" content="Nelson Elijah's Portfolio Site" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="icon" href="/assets/logosingle.svg" />
+        </Head>
+        <Center px={{ base: "20px", lg: "100px", xl: "280px" }}>
+        <Header />
+    </Center>
+        {children}
+        {mobile && <MobileNavigator />}
+        <Navigator />
+        <Footer />
+      </Flex>
   );
 };

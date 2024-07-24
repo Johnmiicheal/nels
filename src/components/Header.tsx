@@ -3,13 +3,13 @@ import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io5"
 
 export const Header = () => {
     return(
-        <Center >
+        <Center>
             <Flex align="center" justify="space-between" w="full" pos="absolute" top={10} px={{ base: "20px", lg: "100px", xl: "280px" }}>
-                <Image src="/assets/logofull.svg" alt="logo" w="70px" pointerEvents="none" />
+                <Image src="/assets/logofull.svg" alt="logo" onClick={() => window.location.assign('/')} w="70px" cursor="pointer" />
                 <Flex align="center" gap={3}>
-                    <Button textTransform={"uppercase"} border="1px solid #4f4f4f" color="#4f4f4f" bg="transparent" fontWeight={500} fontSize={14}>Contact Me</Button>
-                    <IconButton aria-label="github" icon={<IoLogoGithub />} variant="ghost" color="#4f4f4f" />
-                    <IconButton aria-label="linkedin" icon={<IoLogoLinkedin />} variant="ghost" color="#4f4f4f" />
+                    <Button onClick={() => window.open('mailto:nelsonelijah@gmail.com')} textTransform={"uppercase"} border="1px solid #4f4f4f" color="#4f4f4f" bg="transparent" fontWeight={500} fontSize={14}>Contact Me</Button>
+                    <IconButton onClick={() => window.open("https://www.github.com/NelsonElijah")}  aria-label="github" icon={<IoLogoGithub />} variant="ghost" color="#4f4f4f" />
+                    <IconButton onClick={() => window.open("https://www.linkedin.com/in/nelson-elijah/")}  aria-label="linkedin" icon={<IoLogoLinkedin />} variant="ghost" color="#4f4f4f" />
                 </Flex>
             </Flex>
         </Center>

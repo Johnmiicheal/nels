@@ -47,13 +47,14 @@ export const Navigator = () => {
       display={mobile ? 'none' : 'flex'}
     >
       <Flex
-        bg="#E2E2E280"
+        bg="#000a1690"
         backdropFilter={"blur(10px)"}
         p={3}
         borderRadius="md"
         gap={5}
         overflow="auto"
         w={{ base: "full", md: "600px" }}
+        justify="space-between"
       >
         <IconButton
           aria-label="resume"
@@ -125,7 +126,7 @@ export const MobileNavigator = () => {
 
     >
       <Flex
-        bg="#E2E2E280"
+        bg="#000a1690"
         backdropFilter={"blur(10px)"}
         p={3}
         borderRadius="md"

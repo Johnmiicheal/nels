@@ -101,3 +101,36 @@ export const skills = [
           ]
     }
 ]
+
+export const book = [
+    {
+       bkImg: "/images/1.png",
+       bkTitle: "Think Like A Programmer",
+       bkAuthor: "V. Anton Spraul",
+       bkDateRead: "July 29, 2023",
+       bkRating: "10/10",
+       bkReview: "\"Think Like a Programmer\" by V. Anton Spraul is an excellent resource for both beginner and intermediate programmers who want to improve their problem-solving skills. The book focuses on teaching readers how to approach and solve problems methodically, emphasizing the importance of breaking down complex issues into manageable parts. With clear explanations and practical examples, Spraul provides a deep understanding of programming concepts without relying on any specific programming language, making it a versatile guide for programmers of all backgrounds."
+    },
+    {
+        bkImg: "/images/2.png",
+        bkTitle: "The Myth Of Multitasking",
+        bkAuthor: "Dave Crenshaw",
+        bkDateRead: "February 31, 2024",
+        bkRating: "10/10",
+        bkReview: "\"The Myth of Multitasking: How 'Doing It All' Gets Nothing Done\" by Dave Crenshaw is a compelling read that debunks the popular notion that multitasking is an efficient way to manage work. Crenshaw argues that multitasking actually reduces productivity and increases stress. Through engaging stories and practical advice, the book highlights how switching between tasks can lead to mistakes and inefficiencies. Crenshaw introduces the concept of 'switchtasking' and provides strategies for focusing on one task at a time to improve productivity and achieve better results. It's a must-read for anyone looking to optimize their workflow and manage their time more effectively."
+     }, {
+        bkImg: "/images/3.png",
+        bkTitle: "Think Like A Programmer",
+        bkAuthor: "V. Anton Spraul",
+        bkDateRead: "July 29, 2023",
+        bkRating: "10/10",
+        bkReview: "\"Think Like a Programmer\" by V. Anton Spraul is an excellent resource for both beginner and intermediate programmers who want to improve their problem-solving skills. The book focuses on teaching readers how to approach and solve problems methodically, emphasizing the importance of breaking down complex issues into manageable parts. With clear explanations and practical examples, Spraul provides a deep understanding of programming concepts without relying on any specific programming language, making it a versatile guide for programmers of all backgrounds."
+     }, {
+        bkImg: "/images/4.png",
+        bkTitle: "Think Like A Programmer",
+        bkAuthor: "V. Anton Spraul",
+        bkDateRead: "July 29, 2023",
+        bkRating: "10/10",
+        bkReview: "\"Think Like a Programmer\" by V. Anton Spraul is an excellent resource for both beginner and intermediate programmers who want to improve their problem-solving skills. The book focuses on teaching readers how to approach and solve problems methodically, emphasizing the importance of breaking down complex issues into manageable parts. With clear explanations and practical examples, Spraul provides a deep understanding of programming concepts without relying on any specific programming language, making it a versatile guide for programmers of all backgrounds."
+     },
+]

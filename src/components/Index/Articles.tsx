@@ -108,7 +108,7 @@ import Marquee from "../utils/Marquee";
                    I enjoy reading books. - Nelson Elijah, 2024
                   </Box>
                 </Flex>
-            <Button colorScheme="blue">Learn More</Button>
+            <Button colorScheme="blue" onClick={() => window.location.assign('/books')}>Learn More</Button>
           </VStack>
         </Flex>
       </Flex>

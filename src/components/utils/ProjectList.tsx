@@ -1,4 +1,5 @@
-import { Stack, Box, Text, Image } from "@chakra-ui/react";
+import getDateString from "@/utils/getDateString";
+import { Stack, Box, Text, Image, Card, CardBody, CardFooter, Heading } from "@chakra-ui/react";
 import Link from "next/link";
 import React from "react";
 
@@ -23,47 +24,30 @@ const ProjectListItem: React.FC<ProjectListProps> = ({
   mainImage,
 }) => {
   return (
-    <Stack
-      py={2}
-      mb={1}
-      bg="white"
-      overflow="hidden"
-      rounded="md"
-      p={2}
-      cursor="pointer"
-      _hover={{ "& img": { transform: "scale(1.1)" } }}
-    >
-      <Link href={`/project/${slug.current}`}>
-        {mainImage && (
-          <Box overflow="hidden" rounded="md">
-            <Image
-              src={mainImage?.asset.url}
-              alt={mainImage?.alt || "project_image"}
-              objectFit={"cover"}
-              boxSize="200px"
-              w="full"
-              rounded="md"
-              transition="transform 0.3s ease"
-            />
+    <Card maxW='sm' cursor="pointer" transition="transform 0.3s ease" _hover={{ transform: "scale(1.02)", "& img": { transform: "scale(1.1)" } }}  onClick={() => window.location.assign(`/projects/${slug.current}`)}>
+        <CardBody>
+        <Box overflow="hidden" rounded="md">
+          <Image
+            src={mainImage.asset.url!}
+            alt={mainImage.alt}
+            borderRadius='lg'
+            boxSize="200px"
+            objectFit={"cover"}
+            w="full"
+            transition="transform 0.8s ease" 
+          />
           </Box>
-        )}
-        <Text variant="h2" fontSize={{ sm: "2rem" }}>
-          {title}
-        </Text>
-        <Text
-          w={{ base: "200px", xl: "300px" }}
-          fontSize={"0.8em"}
-          h="60px"
-          noOfLines={{ base: 1, lg: 2 }}
-        >
-          {summary}
-        </Text>
-
-        <Text variant="body1" color="#999" fontSize="13">
-          {publishedAt}
-        </Text>
-      </Link>
-    </Stack>
+          <Stack mt='6' spacing='3'>
+            <Heading size='md'>{title}</Heading>
+            <Text>
+             {summary}
+            </Text>
+          </Stack>
+        </CardBody>
+        <CardFooter>
+          <Text fontSize={14}>{getDateString(publishedAt)}</Text>
+        </CardFooter>
+      </Card>
   );
 };
 

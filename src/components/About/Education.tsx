@@ -46,12 +46,12 @@ export const Education = () => {
           />
           <Stack spacing={1}>
             <Text fontWeight={500}>
-              {item.edName}, <Text color="#747474" display={"inline"} fontWeight={300} fontSize={13}>{item.edTimeline}</Text>
+              {item.edName}, <Text color="#747474" display={"inline"} fontWeight={300} fontSize={14}>{item.edTimeline}</Text>
             </Text>
-            <Text fontSize={14}>
+            <Text fontSize={15}>
               {item.edGrade} ∙ {item.edProgram}{" "}
             </Text>
-            <Text mt={2} color="#4f4f4f" fontSize="1.1rem" fontWeight={"300"}>
+            <Text mt={2} fontSize="1.1rem" fontWeight={"300"}>
               <UnorderedList spacing={1}>
                 {item.edList.map((item) => (
                     <ListItem key={item}>{item}</ListItem>
@@ -66,33 +66,7 @@ export const Education = () => {
     <Flex
       gap={10}
       direction="column"
-      w="full"
-      fontSize="1.4rem"
-    >
-      <Flex align="center" gap={2}>
-        <Icon as={IoColorWandOutline} fontSize={20} color="#479AFB" />
-        <Text fontWeight={"semibold"} fontSize={"2xl"}>
-          Skills
-        </Text>
-      </Flex>
-
-     {skills.map((item, index) => (
-        <Stack key={index}>
-        <Text fontSize={"xl"} fontWeight={'500'}>{item.skType}</Text>
-        <UnorderedList>
-            {item.skList.map((item) => (
-                <ListItem key={item} fontSize="1.1rem">
-                    {item}
-                </ListItem>
-            ))}
-        </UnorderedList>
-        </Stack>
-     ))}
-    </Flex>
-    <Flex
-      gap={10}
-      direction="column"
-      pt={20}
+      pt={10}
       pb={20}
       fontSize="1.4rem"
     >
@@ -117,10 +91,10 @@ export const Education = () => {
             <Text fontWeight={500}>
               {item.volPos}, {item.volName}
             </Text>
-            <Text fontSize={15}>
+            <Text fontSize={15} color="#747474">
               {item.volTimeline}
             </Text>
-            <Text mt={2} color="#4f4f4f" fontSize="1.1rem" fontWeight={"300"}>
+            <Text mt={2} fontSize="1.1rem" fontWeight={"300"}>
               {item.volDescription}
             </Text>
           </Stack>
