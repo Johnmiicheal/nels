@@ -134,3 +134,47 @@ export const book = [
         bkReview: "\"Think Like a Programmer\" by V. Anton Spraul is an excellent resource for both beginner and intermediate programmers who want to improve their problem-solving skills. The book focuses on teaching readers how to approach and solve problems methodically, emphasizing the importance of breaking down complex issues into manageable parts. With clear explanations and practical examples, Spraul provides a deep understanding of programming concepts without relying on any specific programming language, making it a versatile guide for programmers of all backgrounds."
      },
 ]
+
+export const lists = [
+    {
+      "task": "Travel to South & North America",
+      "isCompleted": true
+    },
+    {
+      "task": "Volunteer at a local community school",
+      "isCompleted": true
+    },
+    {
+      "task": "Engage in sky diving",
+      "isCompleted": false
+    },
+    {
+      "task": "Talk to a random pilot for advice concerning kuldek’s career",
+      "isCompleted": true
+    },
+    {
+      "task": "Learn to Love Coding",
+      "isCompleted": true
+    },
+    {
+      "task": "Take more pictures",
+      "isCompleted": false
+    },
+    {
+      "task": "Get a power bike",
+      "isCompleted": false
+    },
+    {
+      "task": "Visit Nvidia",
+      "isCompleted": false
+    },
+    {
+      "task": "Build a school",
+      "isCompleted": false
+    },
+    {
+      "task": "Give all pursuit of success away",
+      "isCompleted": false
+    }
+  ]
+  

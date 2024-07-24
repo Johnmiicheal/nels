@@ -1,12 +1,47 @@
-import { Flex, Text, Image, Button } from "@chakra-ui/react";
+import { gentium } from "@/components/Index/Hero";
+import { Layout } from "@/components/Layout";
+import { PageProvider } from "@/components/PageProvider";
+import { lists } from "@/utils/fakedata";
+import { Flex, Text, Image, Button, Link, OrderedList, ListItem, Icon, List } from "@chakra-ui/react";
+import { IoHourglassOutline } from "react-icons/io5";
+import { TbCheck } from "react-icons/tb";
 
 const Lists = () => {
     return(
-    <Flex direction="column" align="center" mt={20}>
-        <Text color="red" fontSize="32" _hover={{ bg: "yellow" }}>Nelson is owing me money!!!</Text>
-        <Image src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXE2b2xsdjc1b2d0eGl4MHJvcndlOHM4aXh0YjliZG00bzgwNXUyOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uyWTOgNGGWfks/giphy.webp" alt="money money money" />
-        <Button bg="blue" color="white" _hover={{bg: "green"}} mt={10} onClick={() => window.location.assign('/')}>Go Back to Home Page</Button>
+   <PageProvider title="100 Lists">
+    <Flex
+      direction="column"
+      w="full"
+      h="40vh"
+      align="start"
+      pt={40}
+      pb={20}
+      mb={10}
+      mt={-10}
+      bg="#479AFB"
+      color="white"
+      px={{ base: "20px", lg: "100px", xl: "280px" }}
+    >
+      <Text fontSize={"5xl"} fontWeight={"bold"} color="white">
+        LIST 100
+      </Text>
+      <Text
+        className={gentium.className}
+        w={{ base: "full", md: "400px" }}
+      >
+        “Lists of things I want to accomplish. If you have any suggestions, feel free to email me at <Link color="blue" href="mailto:nelsonelijah@gmail.com?subject=List100 Suggestions">nelsonelijah@gmail.com</Link>”
+      </Text>
     </Flex>
+    <Layout>
+        <List>
+            {lists.map((item, index) => (
+                <ListItem key={index}>
+                 <Icon as={item.isCompleted === true ? TbCheck : IoHourglassOutline} />  {item.task}
+                </ListItem>
+            ))}
+        </List>
+    </Layout>
+   </PageProvider>
     )
 }
 

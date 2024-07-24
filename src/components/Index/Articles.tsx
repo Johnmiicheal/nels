@@ -62,10 +62,11 @@ import Marquee from "../utils/Marquee";
               summary={summary}
               slug={slug.current} />
             ))}
-           
+           <Box px={2}>
             <Button variant="link" colorScheme="blue" onClick={() => window.location.assign('/blog')}>
               Read more articles
             </Button>
+           </Box>
           </VStack>
           <VStack align={{ base: "center", lg: "start" }} spacing={7}>
             <Flex align={"center"} gap={2} fontSize="24" mb={{ base: 2, lg: 5 }}>
