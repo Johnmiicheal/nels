@@ -31,9 +31,11 @@ export const Projects = () => {
     };
     if(!projects){
       fetchProjects();
-    }
-    if (mobile) {
+    }else if(projects && mobile) {
       setItems(3);
+      fetchProjects();
+    }else{
+      setItems(2);
       fetchProjects();
     }
   }, [items, mobile, projects]);
