@@ -19,7 +19,7 @@ import { useEffect, useState } from "react";
 
 export const Projects = () => {
   const [projects, setProjects] = useState<any[]>([]);
-  const [mobile] = useMediaQuery("(max-width: 1024px)");
+  const [mobile] = useMediaQuery("(max-width: 1512px)");
   const [items, setItems] = useState(2);
 
   useEffect(() => {
