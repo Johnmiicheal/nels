@@ -56,14 +56,31 @@ export const Navigator = () => {
         w={{ base: "full", md: "600px" }}
         justify="space-between"
       >
-        <IconButton
+        {/* <IconButton
           aria-label="resume"
           icon={<TbFileTypePdf />}
           variant="ghost"
           color="#999999"
           _hover={{ bg: "white" }}
           onClick={() => window.open('https://cdn.sanity.io/files/wnde8pd5/production/65ca37a8d2f82a040cf85eb65db0a5389693bf26.pdf')}
-        />
+        /> */}
+        <Stack
+            align="center"
+            color="#999999"
+            onClick={() => window.open('https://cdn.sanity.io/files/wnde8pd5/production/65ca37a8d2f82a040cf85eb65db0a5389693bf26.pdf')}
+            rounded="md"
+            py={1}
+            px={4}
+            spacing={1}
+            cursor="pointer"
+          _hover={{ bg: "white" }}
+
+          >
+            <Icon
+              as={TbFileTypePdf}
+            />
+            <Text fontSize={10} fontWeight={600}>CV</Text>
+          </Stack>
         {navItems.map((item, index) => (
           <Button
             // variant="ghost"

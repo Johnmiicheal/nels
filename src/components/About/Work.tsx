@@ -46,7 +46,7 @@ export const Work = () => {
             <Text fontSize={15} color="#747474">
               {item.xpLocation} ∙ {item.xpTimeline}{" "}
             </Text>
-            <Text mt={2} color="#000" fontSize="1rem" fontWeight={"300"}>
+            <Text mt={2} color="#000" fontSize="1.1rem" fontWeight={"300"}>
               {item.xpDescription}
             </Text>
           </Stack>
