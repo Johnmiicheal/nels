@@ -1,4 +1,4 @@
-import { Flex, Icon, Badge, Text, Image, Button, IconButton, Box, SimpleGrid } from "@chakra-ui/react";
+import { Flex, Icon, Badge, Text, Image, Button, IconButton, Box, SimpleGrid, useMediaQuery } from "@chakra-ui/react";
 import { IoLinkOutline, IoLogoGithub } from "react-icons/io5";
 import { PiCircuitryLight } from "react-icons/pi";
 import client from "@/utils/sanity";
@@ -8,11 +8,17 @@ import { useEffect, useState } from "react";
 
 export const Projects = () => {
   const [projects, setProjects] = useState<any[]>([]);
+  const [mobile] = useMediaQuery("(max-width: 500px)");
+  const [items, setItems] = useState(2)
+
 
   useEffect(() => {
+    if(mobile){
+      setItems(3)
+    }
     const fetchProjects = async () => {
       const project = await client.fetch(`
-        *[_type == "project"]{_key,title,publishedAt,slug,summary,authorAffiliation, "mainImage" : mainImage{alt,caption, asset{_ref}->{url,"blurHash":metadata.blurHash}}} | order(publishedAt desc)[0..2]
+        *[_type == "project"]{_key,title,publishedAt,slug,summary,authorAffiliation, "mainImage" : mainImage{alt,caption, asset{_ref}->{url,"blurHash":metadata.blurHash}}} | order(publishedAt desc)[0..${items}]
       `);
       setProjects(project);
     };
