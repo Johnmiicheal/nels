@@ -15,7 +15,7 @@ export const Hero = () => {
       bgImg="/assets/nelsbg.png"
       bgSize="cover"
       w="full"
-      h={{ lg: "70vh"}}
+      minH={{ lg: "70vh"}}
       align="center"
       pt={40}
       pb={20}

@@ -4,8 +4,10 @@ import { PageProvider } from "@/components/PageProvider";
 import { Flex, Text, Box, Image, Stack } from "@chakra-ui/react";
 import { book } from "@/utils/fakedata";
 import { BookItem } from "@/components/utils/BookItem";
+import React from "react";
 
 const Books = () => {
+  const [show, setShow] = React.useState(false);
 
   return (
     <PageProvider title="Books">

@@ -70,7 +70,7 @@ export const About = () => {
           <Button variant="link" color="black" onClick={() => window.location.assign('/blog')}>
             Find out more from my Blogs
           </Button>
-          <Button variant="link" color="black">
+          <Button variant="link" color="black" onClick={() => window.open('https://cdn.sanity.io/files/wnde8pd5/production/65ca37a8d2f82a040cf85eb65db0a5389693bf26.pdf')}>
             Nelson Elijah&apos;s CV
           </Button>
         </VStack>

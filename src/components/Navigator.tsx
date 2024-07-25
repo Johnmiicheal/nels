@@ -62,6 +62,7 @@ export const Navigator = () => {
           variant="ghost"
           color="#999999"
           _hover={{ bg: "white" }}
+          onClick={() => window.open('https://cdn.sanity.io/files/wnde8pd5/production/65ca37a8d2f82a040cf85eb65db0a5389693bf26.pdf')}
         />
         {navItems.map((item, index) => (
           <Button
@@ -85,6 +86,11 @@ export const Navigator = () => {
 export const MobileNavigator = () => {
   const router = useRouter();
   const navItems = [
+    {
+      label: "CV",
+      path: "/https://cdn.sanity.io/files/wnde8pd5/production/65ca37a8d2f82a040cf85eb65db0a5389693bf26.pdf",
+      icon: TbFileTypePdf,
+    },
     {
       label: "Home",
       path: "/",
