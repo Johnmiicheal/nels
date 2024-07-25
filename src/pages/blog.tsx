@@ -113,7 +113,7 @@ export default function Blog() {
             <Stack align="start" spacing={2} key={item.title}>
               <Button
                 variant="link"
-                // onClick={() => window.location.assign(`/blog/category/${item.slug.current}`)}
+                onClick={() => window.location.assign(`/blog/category/${item.slug.current}`)}
                 color="initial"
                 fontWeight={400}
                 mb={2}
