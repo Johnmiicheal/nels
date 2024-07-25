@@ -47,9 +47,7 @@ const ProjectItem = () => {
           );
           setNext(nextProject);
           setBack(previousProject)
-          console.log(nextProject)
       };
-      console.log(next)
       if (projects.length < 1) {
         const intervalId = setInterval(() => {
           fetchProjects();

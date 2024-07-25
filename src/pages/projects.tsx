@@ -21,7 +21,6 @@ export default function Projects() {
     };
     fetchProjects();
   }, []);
-    console.log(projects)
   return (
     <PageProvider title="My Projects">
          <Flex

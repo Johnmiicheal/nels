@@ -29,11 +29,9 @@ export default function About() {
               },}}`
               );
               setContent(about)
-              console.log("Content: ", about)
         }
         fetchContent()
     }, [])
-    console.log(content)
   return (
     <PageProvider title="About">
         <Hero />

@@ -9,7 +9,6 @@ interface BlogListProps{
 }
 
 const BlogListItem: React.FC<BlogListProps> = ({ date, title, summary, slug }) => {
-  console.log(title, summary, date);
   return (
     <Stack py={2} mb={2} align="start" w="full" _hover={{ bg: "#efefef"}} px={2} rounded="sm">
       <Link href={`/blog/${slug}`}>

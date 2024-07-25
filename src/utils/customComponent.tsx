@@ -107,7 +107,6 @@ const defaultComponents = {
 
   marks: {
     internalLink: ({ value, children }: any) => {
-      console.log(children[0]);
       const href = `/${
         value?.info._type == "post" ? "blog" : value?.info._type
       }/${value?.info.slug.current}`;
