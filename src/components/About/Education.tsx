@@ -46,8 +46,9 @@ export const Education = () => {
           />
           <Stack spacing={1}>
             <Text fontWeight={500}>
-              {item.edName}, <Text color="#747474" display={"inline"} fontWeight={300} fontSize={14}>{item.edTimeline}</Text>
+              {item.edName}
             </Text>
+            <Text fontWeight={300} fontSize={15}>{item.edTimeline}</Text>
             <Text fontSize={15}>
               {item.edGrade} ∙ {item.edProgram}{" "}
             </Text>
