@@ -31,7 +31,7 @@ const [mobile] = useMediaQuery("(max-width: 500px)");
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/assets/logosingle.svg" />
         </Head>
-        <Center px={{ base: "20px", lg: "100px", xl: "280px" }}>
+        <Center px={{ base: "20px", md: "100px", xl: "280px" }}>
         <Header />
     </Center>
         {children}

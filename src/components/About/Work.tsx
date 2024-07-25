@@ -19,7 +19,7 @@ export const Work = () => {
       pt={20}
       mt={40}
       pb={20}
-      px={{ base: "20px", lg: "100px", xl: "280px" }}
+      px={{ base: "20px", md: "100px", xl: "280px" }}
       fontSize="1.4rem"
     >
       <Flex align="center" gap={2}>

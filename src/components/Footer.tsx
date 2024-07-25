@@ -5,7 +5,7 @@ import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io5"
 export const Footer = () => {
   return (
     <Flex direction="column" bottom={0} w="full" bg="white">
-      <Flex p={5} bg="#C4DFFE" direction={{ base: 'column', md: 'row'}} w="full" gap={2} px={{ base: "20px", lg: "100px", xl: "280px" }} justify={{ md: "space-between"}} pt={40}>
+      <Flex p={5} bg="#C4DFFE" direction={{ base: 'column', md: 'row'}} w="full" gap={2} px={{ base: "20px", md: "100px", xl: "280px" }} justify={{ md: "space-between"}} pt={40}>
         <Flex direction="column" color="white" gap={4}>
             <Image src="/assets/logofullwhite.svg" alt="nels logo" onClick={() => window.location.assign('/')} w="100px" cursor="pointer" />
             <Text fontSize={18}>{new Date().getFullYear()} Nelson Elijah. All Rights Reserved</Text>

@@ -18,7 +18,7 @@ const Books = () => {
           pb={20}
           bg="#479AFB"
           color="white"
-          px={{ base: "20px", lg: "100px", xl: "280px" }}
+          px={{ base: "20px", md: "100px", xl: "280px" }}
         >
           <Text fontSize={"5xl"} fontWeight={"bold"} color="white">
             BOOKS

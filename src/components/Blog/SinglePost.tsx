@@ -26,7 +26,7 @@ const SinglePost = ({ publishedAt, body, title, slug, summary }: any) => {
       mb={5}
       bg="#479AFB"
       color="white"
-      px={{ base: "20px", lg: "100px", xl: "280px" }}
+      px={{ base: "20px", md: "100px", xl: "280px" }}
     >
       <Text fontSize={{ base: '3xl', md: "5xl"}} fontWeight={"bold"} color="white">
         {title}

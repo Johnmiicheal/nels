@@ -10,7 +10,7 @@ interface LayoutProps{
 
 export const Layout: React.FC<LayoutProps> = ({children}) => {
     return(
-        <Center px={{ base: "20px", lg: "100px", xl: "280px" }}>
+        <Center px={{ base: "20px", md: "100px", xl: "280px" }} w="full">
             <Flex direction="column" align="center" bg="#F9F9F9" w="full" >
                 {children}
             </Flex>
