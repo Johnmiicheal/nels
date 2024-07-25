@@ -19,7 +19,7 @@ const SinglePost = ({ publishedAt, body, title, slug, summary }: any) => {
          <Flex
       direction="column"
       w="full"
-      h="40vh"
+      minH="40vh"
       align="start"
       pt={{ base: 28, lg: 40}}
       pb={20}

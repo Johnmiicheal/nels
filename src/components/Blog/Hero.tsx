@@ -7,7 +7,7 @@ export const Hero = () => {
       <Flex
         direction="column"
         w="full"
-        h="40vh"
+        minH="40vh"
         align="start"
         pt={40}
         pb={20}
