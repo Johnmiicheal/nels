@@ -29,12 +29,14 @@ export const Projects = () => {
       `);
       setProjects(project);
     };
-    fetchProjects();
+    if(!projects){
+      fetchProjects();
+    }
     if (mobile) {
       setItems(3);
       fetchProjects();
     }
-  }, []);
+  }, [items, mobile, projects]);
   return (
     <Flex
       direction="column"
