@@ -52,7 +52,7 @@ export const Education = () => {
             <Text fontSize={15}>
               {item.edGrade} ∙ {item.edProgram}{" "}
             </Text>
-            <Text mt={2} fontSize="1.1rem" fontWeight={"300"}>
+            <Text mt={2} fontSize="16px" fontWeight={"300"}>
               <UnorderedList spacing={1}>
                 {item.edList.map((item) => (
                     <ListItem key={item}>{item}</ListItem>
@@ -95,7 +95,7 @@ export const Education = () => {
             <Text fontSize={15} color="#747474">
               {item.volTimeline}
             </Text>
-            <Text mt={2} fontSize="1.1rem" fontWeight={"300"}>
+            <Text mt={2} fontSize="16px" fontWeight={"300"}>
               {item.volDescription}
             </Text>
           </Stack>
