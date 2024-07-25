@@ -22,7 +22,7 @@ export const BookItem: React.FC<BookItemProps> = ({bkImg, index}) => {
           <Box
             position="absolute"
             w="90%"
-            h={{ md: "150px"}}
+            h={{ md: "97%"}}
             top="2%"
             left="12px"
             border="1px solid grey"
@@ -51,7 +51,7 @@ export const BookItem: React.FC<BookItemProps> = ({bkImg, index}) => {
               src={bkImg}
               alt={`Book ${index + 1}`}
               w={{ md: "505px"}}
-              h={{ md: "155px"}}
+              h={{ md: "full"}}
               borderRadius="2px 6px 6px 2px"
             />
             <Box

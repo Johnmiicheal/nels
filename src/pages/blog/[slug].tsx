@@ -3,7 +3,7 @@ import { Layout } from "@/components/Layout";
 import { PageProvider } from "@/components/PageProvider"
 import getDateString from "@/utils/getDateString";
 import client from "@/utils/sanity";
-import { Button, Card, CardBody, CardFooter, CardHeader, Flex, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import { Button, Card, CardBody, CardFooter, CardHeader, Flex, Heading, SimpleGrid, Spinner, Stack, Text } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 const Post = () => {
@@ -12,7 +12,7 @@ const Post = () => {
     const [slug, setSlug] = useState<string>(asPath.split('/').filter(Boolean).pop()!)
     const [content, setContent] = useState<any[]>([]);
     const [allContent, setAllContent] = useState<any[]>([]);
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     function getRandomElements<T>(arr: T[], count: number): T[] {
         if (arr.length <= count) {
             return arr;
@@ -25,9 +25,6 @@ const Post = () => {
 
     useEffect(() => {
         setSlug(asPath.split('/').filter(Boolean).pop()!)
-        if(!content){
-            setLoading(true)
-        }
         const fetchContent = async () => {
             const articles = await client.fetch(
                 `*[_type == "post" && slug.current == "${slug}" ]{_id,publishedAt,title,slug,summary, body[]{
@@ -80,12 +77,19 @@ const Post = () => {
               clearTimeout(timeoutId);
             };
           }
+          if(content.length >= 1){
+            setLoading(false)
+          }
     }, [allContent, content, slug])
     const sortContent = allContent.filter((item) => item.slug.current !== content[0]?.slug.current).sort(() => 0.5 - Math.random())
     const sliceContent = getRandomElements(sortContent, 6)
 
     return(
         <PageProvider title={content[0]?.title}>
+          {loading === true ? (
+            <Spinner />
+          ) : (
+            <>
                 <SinglePost title={content![0]?.title!}
                 publishedAt={getDateString(content![0]?.publishedAt!)}
                 slug={slug}
@@ -110,6 +114,8 @@ const Post = () => {
                         </SimpleGrid>
                     </Stack>
                 </Layout>
+            </>
+          )}
         </PageProvider>
     )
 }

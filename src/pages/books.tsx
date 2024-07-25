@@ -45,11 +45,11 @@ const Books = () => {
                         <Text>
                             Read: {item.bkDateRead} • Rating: {item.bkRating}
                         </Text>
-                        <Text mt={1} fontSize={14}>
+                        <Text mt={1} fontSize={16}>
                 {show === false
-                  ? item.bkReview.slice(0, 500)+"..."
-                  : item.bkReview}
-                {item.bkReview?.length > 500 && (
+                  ? item.bkReview.slice(0, 250)+"..." : show === true && showIndex === index ?
+                  item.bkReview : item.bkReview.slice(0,250)}
+                {item.bkReview?.length > 250 && (
                   <Button
                     size="sm"
                     display="inline"

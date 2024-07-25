@@ -4,6 +4,7 @@ import ProjectBody from "@/components/Projects/ProjectBody";
 import { ProjectFooter } from "@/components/Projects/ProjectFooter";
 import ProjectHeader from "@/components/Projects/ProjectHeader";
 import client from "@/utils/sanity";
+import { Spinner } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
@@ -11,6 +12,8 @@ const ProjectItem = () => {
     const [projects, setProjects] = useState<any[]>([]);
     const [next, setNext] = useState<any[]>([]);
     const [back, setBack] = useState<any[]>([]);
+    const [loading, setLoading] = useState(true)
+    
 
     const router = useRouter()
     const { asPath } = router
@@ -63,9 +66,13 @@ const ProjectItem = () => {
           clearTimeout(timeoutId);
         };
       }
+      if(projects.length >= 1){
+        setLoading(false)
+      }
     }, [projects, slug]);
     return(
         <PageProvider title={projects[0]?.title}>
+          {loading === true ? (<Spinner />) : (
             <Layout>
                 <ProjectHeader
             title={projects[0]?.title}
@@ -84,6 +91,7 @@ const ProjectItem = () => {
             nextProject={next}
             />
             </Layout>
+          )}
         </PageProvider>
     )
 }

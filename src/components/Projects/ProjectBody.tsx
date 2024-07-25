@@ -6,7 +6,7 @@ import TableOfContents from "./TableOfContent";
 const ProjectBody = ({ body, headings }: any) => {
   return (
     <Stack>
-        <Flex w="full" gap={20} direction={{ base: "column", lg: "row" }}>
+        <Flex w="full" gap={10} direction={{ base: "column", lg: "row" }}>
         <Stack w="full">
             <TableOfContents headings={headings} sx={{ pl: 0 }} />
         </Stack>
