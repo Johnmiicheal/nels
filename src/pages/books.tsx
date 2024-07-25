@@ -1,13 +1,14 @@
 import { gentium } from "@/components/Index/Hero";
 import { Layout } from "@/components/Layout";
 import { PageProvider } from "@/components/PageProvider";
-import { Flex, Text, Box, Image, Stack } from "@chakra-ui/react";
+import { Flex, Text, Box, Image, Stack, Button } from "@chakra-ui/react";
 import { book } from "@/utils/fakedata";
 import { BookItem } from "@/components/utils/BookItem";
 import React from "react";
 
 const Books = () => {
   const [show, setShow] = React.useState(false);
+  const [showIndex, setShowIndex] = React.useState<number>();
 
   return (
     <PageProvider title="Books">
@@ -44,9 +45,26 @@ const Books = () => {
                         <Text>
                             Read: {item.bkDateRead} • Rating: {item.bkRating}
                         </Text>
-                        <Text>
-                            {item.bkReview}
-                        </Text>
+                        <Text mt={1} fontSize={14}>
+                {show === false
+                  ? item.bkReview.slice(0, 500)+"..."
+                  : item.bkReview}
+                {item.bkReview?.length > 500 && (
+                  <Button
+                    size="sm"
+                    display="inline"
+                    variant="unstyled"
+                    _hover={{ color: "blue.500" }}
+                    fontSize={"12"}
+                    fontWeight={600}
+                    mt={-1}
+                    onClick={() => {setShowIndex(index); showIndex !== index ? setShow(true) : setShow(!show); }}
+                    ml={2}
+                  >
+                    Show {show && showIndex === index ? "Less" : "More"}
+                  </Button>
+                )}
+              </Text>
                     </Stack>
                 </Flex>
             ))}

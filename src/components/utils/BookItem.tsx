@@ -16,7 +16,7 @@ export const BookItem: React.FC<BookItemProps> = ({bkImg, index}) => {
         cursor="pointer"
         onMouseEnter={() => setHoverIndex(index)}
         onMouseLeave={() => setHoverIndex(null)}
-        w={{ md: "500px"}}
+        w={{ md: "500px" }}
       >
         <Flex direction="column" w="full" align="center" position="relative">
           <Box
@@ -50,7 +50,7 @@ export const BookItem: React.FC<BookItemProps> = ({bkImg, index}) => {
             <Image
               src={bkImg}
               alt={`Book ${index + 1}`}
-              w="505px"
+              w={{ md: "505px"}}
               h={{ md: "155px"}}
               borderRadius="2px 6px 6px 2px"
             />
