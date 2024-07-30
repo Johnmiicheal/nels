@@ -6,7 +6,7 @@ const client = createClient({
   apiVersion: "2023-01-13",
   token: process.env.NEXT_PUBLIC_TOKEN,
   perspective: "published",
-  useCdn: false,
+  useCdn: true,
 });
 
 export default client;
