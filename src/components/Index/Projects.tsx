@@ -20,22 +20,21 @@ import { useEffect, useState } from "react";
 export const Projects = () => {
   const [projects, setProjects] = useState<any[]>([]);
   const [mobile] = useMediaQuery("(max-width: 1512px)");
-  const [items, setItems] = useState(2);
+  const [items, setItems] = useState(3);
 
   useEffect(() => {
     const fetchProjects = async () => {
+      if(mobile){
+        setItems(4)
+      }else{
+        setItems(3)
+      }
       const project = await client.fetch(`
-        *[_type == "project"]{_key,title,publishedAt,slug,summary,authorAffiliation, "mainImage" : mainImage{alt,caption, asset{_ref}->{url,"blurHash":metadata.blurHash}}} | order(publishedAt desc)[0..${items}]
+        *[_type == "project"]{_key,title,publishedAt,slug,summary,authorAffiliation, "mainImage" : mainImage{alt,caption, asset{_ref}->{url,"blurHash":metadata.blurHash}}} | order(publishedAt desc)[0..3]
       `);
       setProjects(project);
     };
     if(!projects){
-      fetchProjects();
-    }else if(projects && mobile) {
-      setItems(3);
-      fetchProjects();
-    }else{
-      setItems(2);
       fetchProjects();
     }
   }, [items, mobile, projects]);
@@ -53,7 +52,7 @@ export const Projects = () => {
         <Text>Projects</Text>
       </Flex>
       <SimpleGrid columns={{ base: 1, md: 2, "2xl": 3 }} spacing="10">
-        {projects?.map(
+        {projects.slice(0, items)?.map(
           ({
             title,
             authorAffiliation,
