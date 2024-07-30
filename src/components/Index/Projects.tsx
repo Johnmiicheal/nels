@@ -23,12 +23,12 @@ export const Projects = () => {
   const [items, setItems] = useState(3);
 
   useEffect(() => {
-    const fetchProjects = async () => {
-      if(mobile){
+     if(mobile){
         setItems(4)
       }else{
         setItems(3)
       }
+    const fetchProjects = async () => {
       const project = await client.fetch(`
         *[_type == "project"]{_key,title,publishedAt,slug,summary,authorAffiliation, "mainImage" : mainImage{alt,caption, asset{_ref}->{url,"blurHash":metadata.blurHash}}} | order(publishedAt desc)[0..3]
       `);
@@ -38,6 +38,7 @@ export const Projects = () => {
       fetchProjects();
     }
   }, [items, mobile, projects]);
+  console.log(projects);
   return (
     <Flex
       direction="column"
@@ -52,7 +53,7 @@ export const Projects = () => {
         <Text>Projects</Text>
       </Flex>
       <SimpleGrid columns={{ base: 1, md: 2, "2xl": 3 }} spacing="10">
-        {projects.slice(0, items)?.map(
+        {projects?.slice(0, items)?.map(
           ({
             title,
             authorAffiliation,
