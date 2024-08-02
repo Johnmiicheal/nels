@@ -209,8 +209,9 @@
   }
 }
 
+
 @media (min-width: 1000px){
-.css-msvesn {
+#__next{
  max-width:1000px;
 }
 }
