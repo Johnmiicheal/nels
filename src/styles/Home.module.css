@@ -209,7 +209,7 @@
   }
 }
 
-@media (max-width: 1000px){
+@media (min-width: 1000px){
 .css-msvesn {
  max-width:1000px;
 }
