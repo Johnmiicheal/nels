@@ -209,9 +209,9 @@
   }
 }
 
-@media (max-width: 1000px){
+@media (min-width: 1000px){
 #__next{
- max-width:1000px;
+ max-width:1200px;
 }
 }
 
