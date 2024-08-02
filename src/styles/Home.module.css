@@ -209,6 +209,12 @@
   }
 }
 
+@media (max-width: 1000px){
+.css-msvesn {
+ max-width:1000px;
+}
+}
+
 @media (prefers-color-scheme: dark) {
   .vercelLogo {
     filter: invert(1);
