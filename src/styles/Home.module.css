@@ -210,7 +210,7 @@
 }
 
 @media only screen and (min-width: 1100px){
-#__next{
+body{
  max-width:1000px;
 }
 }
