@@ -57,7 +57,7 @@ export const Hero = () => {
             >
               Nelson Elijah
             </Heading>
-            <Text fontSize="24">Hardware Engineering. Teaching. Quality education.</Text>
+            <Text fontSize="24">Engineering. Teaching. Quality education.</Text>
           </Stack>
         </Flex>
       </Flex>
