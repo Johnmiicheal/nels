@@ -3,7 +3,7 @@ import { Layout } from "@/components/Layout";
 import { PageProvider } from "@/components/PageProvider"
 import getDateString from "@/utils/getDateString";
 import client from "@/utils/sanity";
-import { Button, Card, CardBody, CardFooter, CardHeader, Divider, Flex, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import { Button, Card, CardBody, CardFooter, CardHeader, Divider, Flex, Heading, SimpleGrid, Stack, Text, Image } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 const Category = () => {
