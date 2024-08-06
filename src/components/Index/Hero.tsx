@@ -40,24 +40,18 @@ export const Hero = () => {
             w={{ base: "full", md: "500px" }}
             fontSize="1.2rem"
           >
-            As an aspiring hardware, robotics, and backend engineer passionate
-            about merging Hardware Systems and AI, exploring Robotics, HCI, and
-            EdgeAI, and deeply committed to{" "}
+            Learn. {" "}
             <Text color="#479AFB" display="inline">
-              reshaping educational reforms
+              Think.
             </Text>{" "}
-            and pedagogy, I find inspiration in Christa McAuliffe&apos;s quote,
-            &ldquo;I touch the future, I teach&rdquo;, reflecting my dedication
-            to{" "}
-            <Text color="#479AFB" display="inline">
-              teaching and contributing
+            Build... {" "} <Text color="#479AFB" display="inline">
+              Repeat
             </Text>{" "}
-            to a better society.
           </Text>
           <Stack spacing={-5} mt={5}>
             <Heading
               fontWeight={"black"}
-              fontSize="5xl"
+              fontSize="4xl"
               color="#479AFB"
               textTransform={"uppercase"}
             >
