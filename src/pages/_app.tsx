@@ -64,6 +64,18 @@ export const metadata: Metadata = {
   category: "technology",
 };
 
+  const message = `
+%cWebsite designed by Johnmiicheal\n
+ #####    #####   ######    ######  ######   ##  ##   ##  ##   
+#######  #######  #######  #######  #######  ### ##   ## ##    
+##   ##  ##   ##       ##  ##            ##  ######   ####     
+##       ##   ##  ##   ##  #######  ######   ######   ####     
+##   ##  ##   ##  ##   ##  ##       ##       ## ###   ## ##    
+#######  #######  #######  #######  ##       ##  ##   ##  ##   
+ #####    #####   ######    ######  ##       ##  ##   ##   ## 
+`
+console.log(message, "color: pink;");
+
 export default function App({ Component, pageProps }: AppProps) {
   return(
     <ChakraProvider theme={theme}>
